@@ -1,0 +1,14 @@
+[Unit]
+Description=SPI Lights
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python -u spi_lights.py
+WorkingDirectory=/home/pi/spi
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
